@@ -60,14 +60,11 @@ function flag_view_shortcode($atts) {
 
         $output .= sprintf(
             '<div class="flag-view-item" data-country="%s" data-animation="%s">
-                <img src="%s" alt="%s" class="flag-view-flag flag-view-size-%s">
+               
                 <span class="flag-view-country-name">%s</span>
             </div>',
             esc_attr($country),
             esc_attr($atts['animation']),
-            esc_url($flag_url),
-            esc_attr($country_name),
-            esc_attr($atts['size']),
             esc_html($country_name)
         );
     }
@@ -94,9 +91,3 @@ function flag_view_get_country_name($code) {
 
     return isset($countries[$code]) ? $countries[$code] : ucfirst($code);
 }
-
-// Load textdomain
-function flag_view_load_textdomain() {
-    load_plugin_textdomain('flag-view', false, dirname(plugin_basename(__FILE__)) . '/languages/');
-}
-add_action('plugins_loaded', 'flag_view_load_textdomain');
