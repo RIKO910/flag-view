@@ -86,7 +86,7 @@ function flag_view_get_country_name($code) {
         'jp' => __('Japan', 'flag-view'),
         'br' => __('Brazil', 'flag-view'),
         'in' => __('India', 'flag-view'),
-        // Add more countries as needed
+        'bn' => __('Bangladesh', 'flag-view'),
     );
 
     return isset($countries[$code]) ? $countries[$code] : ucfirst($code);
